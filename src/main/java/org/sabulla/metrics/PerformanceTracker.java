@@ -68,14 +68,14 @@ public class PerformanceTracker {
      * @param fileName the name (or path) of the CSV file to export to
      */
 
-    public void exportToCSV(String fileName) {
+    public void exportToCSV(String fileName, int size) {
         File file = new File(fileName);
         boolean fileExists = file.exists();
         try (FileWriter writer = new FileWriter(fileName, true)) {
             if (!fileExists) {
-                writer.write("Comparisons,ArrayAccesses,MemoryAllocations,Time(ms)\n");
+                writer.write("Size,Comparisons,ArrayAccesses,MemoryAllocations,Time(ms)\n");
             }
-            writer.write(comparisons + "," + arrayAccesses + "," + memoryAllocations + "," + time / 1000000.0 + "\n");
+            writer.write(size + "," + comparisons + "," + arrayAccesses + "," + memoryAllocations + "," + time / 1000000.0 + "\n");
         } catch (IOException e) {
             e.printStackTrace();
         }
