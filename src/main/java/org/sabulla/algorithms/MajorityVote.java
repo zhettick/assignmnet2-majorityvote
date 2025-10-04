@@ -46,18 +46,15 @@ public class MajorityVote {
         int candidate = 0;
         int count = 0;
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int j : arr) {
             tracker.addArrayAccesses();
+            tracker.addComparisons();
             if (count == 0) {
-                tracker.addComparisons();
-                candidate = arr[i];
-            }
-
-            if (arr[i] == candidate) {
-                tracker.addComparisons();
+                candidate = j;
+                count = 1;
+            } else if (j == candidate) {
                 count++;
             } else {
-                tracker.addComparisons();
                 count--;
             }
         }
@@ -69,8 +66,12 @@ public class MajorityVote {
         int count = 0;
         for (int i = 0; i < arr.length; i++) {
             tracker.addArrayAccesses();
+            if (count + (arr.length - i) < arr.length / 2) {
+                break;
+            }
+
+            tracker.addComparisons();
             if (arr[i] == candidate) {
-                tracker.addComparisons();
                 count++;
             }
         }
