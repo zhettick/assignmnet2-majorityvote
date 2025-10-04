@@ -1,4 +1,6 @@
-package org.sabulla;
+package org.sabulla.algorithms;
+
+import org.sabulla.metrics.PerformanceTracker;
 
 import java.util.NoSuchElementException;
 
