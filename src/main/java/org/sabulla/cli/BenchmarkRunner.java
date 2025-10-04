@@ -30,7 +30,7 @@ public class BenchmarkRunner {
             System.out.println("Time: " + tracker.getTime() / 1000000.0 + " ms");
             System.out.println("------------------------------------------");
 
-            tracker.exportToCSV("docs/performance-plots/benchmark-results.csv");
+            tracker.exportToCSV("docs/performance-plots/benchmark-results.csv", size);
         }
     }
 
@@ -38,7 +38,7 @@ public class BenchmarkRunner {
         Random random = new Random();
         int[] arr = new int[size];
         for (int i = 0; i < size; i++) {
-            arr[i] = random.nextInt(100);
+            arr[i] = random.nextInt(2);
         }
         return arr;
     }
