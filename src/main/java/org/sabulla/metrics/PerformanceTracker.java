@@ -1,4 +1,4 @@
-package org.sabulla;
+package org.sabulla.metrics;
 
 public class PerformanceTracker {
     private long comparisons;
