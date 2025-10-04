@@ -4,7 +4,22 @@ import org.sabulla.metrics.PerformanceTracker;
 
 import java.util.NoSuchElementException;
 
+/**
+ * Implements the Boyer–Moore Majority Vote algorithm.
+ * Finds the element that appears more than n/2 times in an array.
+ * Time complexity: O(n), Space complexity: O(1).
+ */
+
 public class MajorityVote {
+    /**
+     * Finds the majority element in the given array.
+     *
+     * @param arr     the input array
+     * @param tracker the performance tracker for metrics
+     * @return the majority element
+     * @throws NoSuchElementException if no majority element is found or array is empty
+     */
+
     public int findMajority(int[] arr, PerformanceTracker tracker) {
         tracker.reset();
         tracker.start();
